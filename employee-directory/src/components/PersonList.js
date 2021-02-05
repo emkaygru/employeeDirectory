@@ -8,6 +8,18 @@ export default class PersonList extends React.Component {
   };
 
   componentDidMount() {
-    axios.get("https://randomuser.me/api/?results=100");
+    axios.get("https://randomuser.me/api/?results=100").then((res) => {
+      this.setState({ persons: res.data });
+    });
+  }
+
+  render() {
+    return (
+      <ul>
+        {this.state.persons.map((persons) => (
+          <li>person.name</li>
+        ))}
+      </ul>
+    );
   }
 }
