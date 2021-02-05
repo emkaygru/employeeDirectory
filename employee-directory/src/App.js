@@ -17,7 +17,8 @@ function App() {
     const columns = rows[0] && Object.keys(rows[0]);
     return rows.filter((row) =>
       columns.some(
-        (column) => row[column].toString().toLowerCase().indexOf(q) > -1
+        (column) =>
+          row[column].toString().toLowerCase().indexOf(q.toLowerCase()) > -1
       )
     );
   }
