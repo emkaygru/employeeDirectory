@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 require("es6-promise").polyfill();
 require("isomorph-fetch");
+import Datatable from "./datatable";
 
 function App() {
   const [data, setData] = useState([]);
@@ -15,7 +16,9 @@ function App() {
   return (
     <div>
       <div>filter</div>
-      <div>datatable</div>
+      <div>
+        <Datatable data={data} />
+      </div>
     </div>
   );
 }
