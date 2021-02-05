@@ -13,6 +13,15 @@ function App() {
       .then((json) => setData(json));
   }, []);
 
+  function searchUsers(rows) {
+    const columns = rows[0] && Object.keys(rows[0]);
+    return rows.filter((row) =>
+      columns.some(
+        (column) => row[column].toString().toLowerCase().indexOf(q) > -1
+      )
+    );
+  }
+
   return (
     <div>
       <div>filter</div>
