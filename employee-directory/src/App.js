@@ -3,35 +3,29 @@ require("es6-promise").polyfill();
 require("isomorph-fetch");
 import Datatable from "./datatable";
 import PersonList from ".components/PersonList";
+import axios from "axios";
 
-function App() {
-  const [data, setData] = useState([]);
-  const [q, setQ] = useState("");
+class App extends Component {
+  state = {
+    employees: [],
+  };
 
-  useEffect(() => {
-    fetch()
-      .then((response) => response.json())
-      .then((json) => setData(json));
-  }, []);
-
-  function searchUsers(rows) {
-    const columns = rows[0] && Object.keys(rows[0]);
-    return rows.filter((row) =>
-      columns.some(
-        (column) =>
-          row[column].toString().toLowerCase().indexOf(q.toLowerCase()) > -1
-      )
-    );
+  componentDidMount() {
+    axios.get(`https://randomuser.me/api/?results=100`).then((res) => {
+      this.setState({ employees: res.data.results });
+    });
   }
 
-  return (
-    <div>
-      <div>filter</div>
-      <div>
-        <Datatable data={data} />
+  render() {
+    return (
+      <div className="App">
+        <SiteHead />
+        {this.state.employees.length > 0 && (
+          <Navbar employees={this.state.employees} />
+        )}
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default App;
