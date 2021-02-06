@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 require("es6-promise").polyfill();
 require("isomorph-fetch");
 import Datatable from "./datatable";
+import PersonList from ".components/PersonList";
 
 function App() {
   const [data, setData] = useState([]);
