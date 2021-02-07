@@ -43,9 +43,8 @@ const UserTable = () => {
 
   return (
     <div style={{ background: " #252525" }} >
-     
-      <input className="form-group mt-5 mb-5 text-center" onChange={handleInputChange} value={searchTerm} />
-      <SubmitButton handleSubmit={handleSubmit}/>
+     <input className="mt-5 mb-5 align-items-center" onChange={ handleInputChange } value= {searchTerm} /><SubmitButton handleSubmit={handleSubmit}/>
+      
       <table
         className="container table text-center"
         style={{ color: "#e8e8e8" }}
