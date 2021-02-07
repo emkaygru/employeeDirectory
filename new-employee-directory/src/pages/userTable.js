@@ -10,7 +10,7 @@ const userTable = () => {
   }, []);
 
   function showUsers() {
-    API.GetItems()
+    API.randomUser()
       .then((res) => {
         setEmployee(res.data.results);
         setOriginalEmployee(res.data.results);
