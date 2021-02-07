@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import API from "../utils/API";
+// import SiteHeader from "./components/SiteHeader";
+import SubmitButton from "../components/SubmitButton.js";
 
-const userTable = () => {
+const UserTable = () => {
   const [employee, setEmployee] = useState([]);
   const [originalEmployee, setOriginalEmployee] = useState([]);
-  const [searchTerm, setSearchTerm] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
   useEffect(() => {
     showUsers();
   }, []);
@@ -40,9 +42,9 @@ const userTable = () => {
   }
 
   return (
-    <div style={{ background: #e8e8e8 }}>
-      <input className="mt-5" onChange={handleInputChange} value={search} />{" "}
-      <Buttons handleSubmit={handleSubmit} />
+    <div style={{ background: " #e8e8e8" }}>
+      <input className="mt-5" onChange={handleInputChange} value={searchTerm} />{" "}
+      <SubmitButton handleSubmit={handleSubmit} />
       <table
         className="container table table-hover text-center"
         style={{ color: "fff" }}
@@ -78,4 +80,4 @@ const userTable = () => {
   );
 };
 
-export default userTable;
+export default UserTable;

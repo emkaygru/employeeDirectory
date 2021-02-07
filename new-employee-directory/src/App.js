@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import SiteHeader from "./components/siteHeader.js";
+import SiteHeader from "./components/SiteHeader";
+import UserTable from "./pages/userTable";
 
 function App() {
   return (
