@@ -77,3 +77,5 @@ const userTable = () => {
     </div>
   );
 };
+
+export default userTable;
