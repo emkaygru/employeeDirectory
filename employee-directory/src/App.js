@@ -4,6 +4,7 @@ require("isomorph-fetch");
 import Datatable from "./datatable";
 import PersonList from ".components/PersonList";
 import axios from "axios";
+import SiteHeader from ".components/siteHeader";
 
 class App extends Component {
   state = {
@@ -19,9 +20,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <SiteHead />
+        <SiteHeader />
         {this.state.employees.length > 0 && (
-          <Navbar employees={this.state.employees} />
+          <Nav employees={this.state.employees} />
         )}
       </div>
     );
