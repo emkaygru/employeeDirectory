@@ -4,7 +4,7 @@ import React from "react";
 const SiteHeader = () => {
   return (
     <div className="jumbotron title-card mb-0">
-      <div className="title display-3">Employee Directory</div>
+      <div className="title display-3 text-center">Employee Directory</div>
     </div>
   );
 };
