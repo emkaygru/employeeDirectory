@@ -7,3 +7,4 @@ An web application created using the React front-end JavaScript library. This em
 
 
 ## Link to Deployed Application 
+https://emkaygru.github.io/employeeDirectory/
