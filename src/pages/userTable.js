@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import API from "../utils/API";
 // import SiteHeader from "./components/SiteHeader";
 import SubmitButton from "../components/SubmitButton.js";
@@ -42,9 +42,16 @@ const UserTable = () => {
   }
 
   return (
-    <div style={{ background: " #252525" }} >
-     <input className="mt-5 mb-5 align-items-center" onChange={ handleInputChange } value= {searchTerm} /><SubmitButton handleSubmit={handleSubmit}/>
-      
+    <div style={{ background: " #252525" }}>
+      <div className="container text-center pt-5">
+        <input
+          className="mt-8 mb-5 align-items-center form-group form-control pt-5"
+          onChange={handleInputChange}
+          value={searchTerm}
+        />
+        <SubmitButton handleSubmit={handleSubmit} />
+      </div>
+
       <table
         className="container table text-center"
         style={{ color: "#e8e8e8" }}
@@ -65,8 +72,7 @@ const UserTable = () => {
             employee.map(({ picture, email, name, location }) => {
               return (
                 <tr>
-                   <img
-              src={picture.thumbnail} className="img-fluid m-5 pb-5"/>
+                  <img src={picture.thumbnail} className="img-fluid m-5 pb-5" />
                   <td className="m-5 p-5">{name.first}</td>
                   <td className="m-5 p-5">{name.last}</td>
                   <td className="m-5 p-5">{email}</td>
